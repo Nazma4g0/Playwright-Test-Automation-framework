@@ -61,7 +61,7 @@ test('Login User with correct email and password', async ({ page }) => {
     
 });
 
-test.only('Login User with incorrect email and password', async ({ page }) => {
+test('Login User with incorrect email and password', async ({ page }) => {
     const loginPage = new LoginPage(page);
     await loginPage.Login('nazmashaik1130@gmail.com', 'N@zma1234g0');
     const isErrorMessageVisible = await loginPage.verifyErrorMessage();
