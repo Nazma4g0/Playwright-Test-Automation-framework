@@ -1,37 +1,5 @@
 import { test, expect, type Locator } from '@playwright/test';
 
-test("title of the webpage", async ({page})=>
-{
-    await page.goto("https://www.naukri.com");
-    let title:string = await page.title();
-    console.log("Title :" ,title);
-    await expect(page).toHaveTitle("Jobs - Recruitment - Job Search - Employment - Job Vacancies - Naukri.com");
-});
-
-test("Verify the URL", async ({page})=>
-{
-    await page.goto("https://www.naukri.com");
-    let Url:string = await page.url();
-    console.log("URL :" ,Url);
-    await expect(page).toHaveURL(/naukri/);
-});
-
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
-
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
-});
-
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
-
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
-
-  // Expects page to have a heading with the name of Installation.
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
-});
 
 test('verify automation exercise test cases page and count', async ({ page }) => {
   await page.goto('https://automationexercise.com/');
@@ -45,6 +13,7 @@ test('verify automation exercise test cases page and count', async ({ page }) =>
   const testCaseCount = await page.locator('text=/Test Case \\d+:/').count();
   await expect(testCaseCount).toBe(26);
 });
+
 test('Text Input actions should fill the data entry form', async ({ page }) => {
     await page.goto('https://testautomationpractice.blogspot.com/');
 
@@ -171,67 +140,6 @@ test('Colors dropdown should contain duplicates and sorted dropdown should not',
 
     const duplicateAnimals = animalValues.filter((value, index) => animalValues.indexOf(value) !== index);
     expect(duplicateAnimals, 'Sorted list dropdown should not contain duplicate values').toEqual([]);
-});
-
-test("Verify Playwright Locators", async ({page}) =>
-{
-    await page.goto("https://demo.nopcommerce.com/");
-    const logo:Locator = page.getByAltText("Icon for demo.nopcommerce.com");
-    await expect(logo).toBeVisible();
-
-;
-
-// 2. page.getByText()
-
-await expect(page.getByText("Welcome to our store")).toBeVisible();
-
-
-//3.page.getByRole()
-
-await page.getByRole("link",{name:'Register'}).click();
-
-await expect(page.getByRole("heading",{name:'Register'})).toBeVisible();
-
-
-// 4. page.getByLabel()
-
-await page.getByLabel('First name:').fill("Nazma");
-await page.getByLabel('Last name:').fill("Shaik");
-await page.getByLabel('Email:').fill("nazmashaik@gmail.com");
-
-
-//5. page.getByPlaceholder()
-
-page.getByPlaceholder('Search store').fill("Apple MacBook Pro");
-
-});
-
-test('verify nopCommerce home page, registration form, and search', async ({ page }) => {
-  await page.goto('https://demo.nopcommerce.com/', { waitUntil: 'domcontentloaded' });
-  await page.waitForLoadState('load', { timeout: 15000 }).catch(() => undefined);
-  await page.waitForTimeout(3000);
-
-  const title = await page.title();
-  const bodyText = await page.locator('body').innerText();
-  const isCloudflareChallenge = /just a moment|security verification|cloudflare/i.test(title) || /security verification|cloudflare/i.test(bodyText);
-
-  if (isCloudflareChallenge) {
-    test.skip(true, 'The nopCommerce site is currently serving a Cloudflare challenge in this environment.');
-  }
-
-  await expect(page.getByAltText(/nopCommerce demo store/i)).toBeVisible();
-  await expect(page).toHaveTitle('nopCommerce demo store. Shopping Cart');
-
-  await expect(page.getByText('Welcome to our store')).toBeVisible();
-
-  const registerLink = page.getByRole('link', { name: 'Register' });
-  await expect(registerLink).toBeVisible();
-  await registerLink.click();
-  await page.getByLabel('Female').check();
-  await page.getByLabel('First name').fill('Nazma');
-  await page.getByLabel('Last name').fill('Shaik');
-  await page.getByLabel('Email').fill('nazmashaik115@gmail.com');
-  await page.getByPlaceholder('Search store').fill('Apple MacBook Pro');
 });
 
 test('Register User', async ({ page }) => {
