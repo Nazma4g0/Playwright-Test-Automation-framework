@@ -2,25 +2,18 @@ import { test, expect, type Locator } from '@playwright/test';
 
 
 test('verify automation exercise test cases page and count', async ({ page }) => {
-  await page.goto('https://automationexercise.com/');
-
-  await expect(page).toHaveTitle('Automation Exercise');
-
-  await page.locator('a[href="/test_cases"]').first().click();
-
-  await expect(page).toHaveURL(/.*test_cases/);
-
-  const testCaseCount = await page.locator('text=/Test Case \\d+:/').count();
-  await expect(testCaseCount).toBe(26);
+    await page.goto('https://automationexercise.com/');
+    await expect(page).toHaveTitle('Automation Exercise');
+    await page.locator('a[href="/test_cases"]').first().click();
+    await expect(page).toHaveURL(/.*test_cases/);
+    const testCaseCount = await page.locator('text=/Test Case \\d+:/').count();
+    await expect(testCaseCount).toBe(26);
 });
 
 test('Text Input actions should fill the data entry form', async ({ page }) => {
     await page.goto('https://testautomationpractice.blogspot.com/');
-
     await expect(page).toHaveTitle('Automation Testing Practice');
-
     await page.getByRole('link', { name: 'Data Entry Form' }).click();
-
     await page.locator('#name').fill('Nazma');
     await expect(page.locator('#name')).toHaveValue('Nazma');
     await page.locator('#email').fill('nazmashaik115@gmail.com');
@@ -142,59 +135,64 @@ test('Colors dropdown should contain duplicates and sorted dropdown should not',
     expect(duplicateAnimals, 'Sorted list dropdown should not contain duplicate values').toEqual([]);
 });
 
-test('Register User', async ({ page }) => {
-  await page.goto('https://automationexercise.com/');
+test.only('Register User', async ({ page }) => {
+    await page.goto('https://automationexercise.com/');
 
-  await expect(page.locator('text=Features Items')).toBeVisible();
-  await expect(page).toHaveTitle('Automation Exercise');
+    await expect(page.locator('text=Features Items')).toBeVisible();
+    await expect(page).toHaveTitle('Automation Exercise');
 
-  await page.getByRole('link', { name: 'Signup / Login' }).click();
-  await expect(page.getByRole('heading', { name: 'New User Signup!' })).toBeVisible();
+    await page.getByRole('link', { name: 'Signup / Login' }).click();
+    await expect(page.getByRole('heading', { name: 'New User Signup!' })).toBeVisible();
 
-  await page.locator('input[data-qa="signup-name"]').fill('Nazma');
-  await page.locator('input[data-qa="signup-email"]').fill('nazmashaik115@gmail.com');
-  await page.getByRole('button', { name: 'Signup' }).click();
+    const randomEmail = `nazma${Date.now()}@gmail.com`;
 
-  await expect(page.getByRole('heading', { name: 'Enter Account Information' })).toBeVisible();
+    await page.locator('input[data-qa="signup-name"]').fill('Nazma');
+    await page.locator('input[data-qa="signup-email"]').fill(randomEmail);
 
-  await page.getByLabel('Mrs.').check();
-  await expect(page.locator('input[data-qa="name"]')).toHaveValue('Nazma');
-  await expect(page.locator('input[data-qa="email"]')).toHaveValue('nazmashaik115@gmail.com');
+    await page.getByRole('button', { name: 'Signup' }).click();
 
-  await page.locator('input[data-qa="password"]').fill('N@zma4g0');
+    await page.waitForLoadState('networkidle');
 
-  await page.locator('select[data-qa="days"]').selectOption('11');
-  await page.locator('select[data-qa="months"]').selectOption('May');
-  await page.locator('select[data-qa="years"]').selectOption('2000');
+    await expect(page.getByText('Enter Account Information')).toBeVisible();
 
-  await page.locator('#newsletter').check();
-  await page.locator('#optin').check();
+    await page.getByLabel('Mrs.').check();
 
-  await expect(page.getByRole('heading', { name: 'Address Information' })).toBeVisible();
+    await expect(page.locator('input[data-qa="name"]')).toHaveValue('Nazma');
+    await expect(page.locator('input[data-qa="email"]')).toHaveValue(randomEmail);
+    await page.locator('input[data-qa="password"]').fill('N@zma4g0');
 
-  await page.locator('input[data-qa="first_name"]').fill('Nazma');
-  await page.locator('input[data-qa="last_name"]').fill('Shaik');
-  await page.locator('input[data-qa="company"]').fill('TCS');
-  await page.locator('input[data-qa="address"]').fill('Mani Kanta Occational Colleage beside building');
-  await page.locator('input[data-qa="address2"]').fill('Farooq Nagar, Rangareddy District.');
-  await page.locator('select[data-qa="country"]').selectOption('India');
-  await page.locator('input[data-qa="state"]').fill('Telangana');
-  await page.locator('input[data-qa="city"]').fill('Shadnagar');
-  await page.locator('input[data-qa="zipcode"]').fill('509216');
-  await page.locator('input[data-qa="mobile_number"]').fill('9666187886');
+    await page.locator('select[data-qa="days"]').selectOption('11');
+    await page.locator('select[data-qa="months"]').selectOption('May');
+    await page.locator('select[data-qa="years"]').selectOption('2000');
 
-  await page.getByRole('button', { name: 'Create Account' }).click();
+    await page.locator('#newsletter').check();
+    await page.locator('#optin').check();
 
-  await expect(page.getByText('Account Created!')).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Address Information' })).toBeVisible();
 
-  await page.getByRole('link', { name: 'Continue' }).click();
+    await page.locator('input[data-qa="first_name"]').fill('Nazma');
+    await page.locator('input[data-qa="last_name"]').fill('Shaik');
+    await page.locator('input[data-qa="company"]').fill('TCS');
+    await page.locator('input[data-qa="address"]').fill('Mani Kanta Occational Colleage beside building');
+    await page.locator('input[data-qa="address2"]').fill('Farooq Nagar, Rangareddy District.');
+    await page.locator('select[data-qa="country"]').selectOption('India');
+    await page.locator('input[data-qa="state"]').fill('Telangana');
+    await page.locator('input[data-qa="city"]').fill('Shadnagar');
+    await page.locator('input[data-qa="zipcode"]').fill('509216');
+    await page.locator('input[data-qa="mobile_number"]').fill('9666187886');
 
-  await expect(page.getByText(/Logged in as/i)).toBeVisible();
+    await page.getByRole('button', { name: 'Create Account' }).click();
 
-  await page.getByRole('link', { name: 'Delete Account' }).click();
+    await expect(page.getByText('Account Created!')).toBeVisible();
 
-  await expect(page.getByText('Account Deleted!')).toBeVisible();
-  await page.getByRole('link', { name: 'Continue' }).click();
+    await page.getByRole('link', { name: 'Continue' }).click();
+
+    await expect(page.getByText(/Logged in as/i)).toBeVisible();
+
+    await page.getByRole('link', { name: 'Delete Account' }).click();
+
+    await expect(page.getByText('Account Deleted!')).toBeVisible();
+    await page.getByRole('link', { name: 'Continue' }).click();
 });
 
 test('Static web table should be visible and its data should match the expected values', async ({ page }) => {
