@@ -135,7 +135,7 @@ test('Colors dropdown should contain duplicates and sorted dropdown should not',
     expect(duplicateAnimals, 'Sorted list dropdown should not contain duplicate values').toEqual([]);
 });
 
-test.only('Register User', async ({ page }) => {
+test('Register User', async ({ page }) => {
     await page.goto('https://automationexercise.com/');
 
     await expect(page.locator('text=Features Items')).toBeVisible();
