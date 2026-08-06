@@ -1,0 +1,337 @@
+- generic [active] [ref=f28e1]:
+  - banner [ref=f28e2]:
+    - generic [ref=f28e5]:
+      - link [ref=f28e8] [cursor=pointer]:
+        - /url: /
+        - img "Website for practice automation" [ref=f28e9]
+      - list [ref=f28e12]:
+        - listitem [ref=f28e13]:
+          - link " Home" [ref=f28e14] [cursor=pointer]:
+            - /url: /
+            - generic [ref=f28e15]: 
+            - text: Home
+        - listitem [ref=f28e16]:
+          - link " Products" [ref=f28e17] [cursor=pointer]:
+            - /url: /products
+            - generic [ref=f28e18]: 
+            - text: Products
+        - listitem [ref=f28e19]:
+          - link " Cart" [ref=f28e20] [cursor=pointer]:
+            - /url: /view_cart
+            - generic [ref=f28e21]: 
+            - text: Cart
+        - listitem [ref=f28e22]:
+          - link " Signup / Login" [ref=f28e23] [cursor=pointer]:
+            - /url: /login
+            - generic [ref=f28e24]: 
+            - text: Signup / Login
+        - listitem [ref=f28e25]:
+          - link " Test Cases" [ref=f28e26] [cursor=pointer]:
+            - /url: /test_cases
+            - generic [ref=f28e27]: 
+            - text: Test Cases
+        - listitem [ref=f28e28]:
+          - link " API Testing" [ref=f28e29] [cursor=pointer]:
+            - /url: /api_list
+            - generic [ref=f28e30]: 
+            - text: API Testing
+        - listitem [ref=f28e31]:
+          - link " Video Tutorials" [ref=f28e32] [cursor=pointer]:
+            - /url: https://www.youtube.com/c/AutomationExercise
+            - generic [ref=f28e33]: 
+            - text: Video Tutorials
+        - listitem [ref=f28e34]:
+          - link " Contact us" [ref=f28e35] [cursor=pointer]:
+            - /url: /contact_us
+            - generic [ref=f28e36]: 
+            - text: Contact us
+  - generic [ref=f28e40]:
+    - generic [ref=f28e41]:
+      - heading "Enter Account Information" [level=2] [ref=f28e42]
+      - generic [ref=f28e43]:
+        - generic [ref=f28e44]:
+          - generic [ref=f28e45]: Title
+          - generic [ref=f28e47]:
+            - radio "Mr." [ref=f28e49]
+            - text: Mr.
+          - generic [ref=f28e51]:
+            - radio "Mrs." [ref=f28e53]
+            - text: Mrs.
+        - generic [ref=f28e54]:
+          - generic [ref=f28e55]:
+            - text: Name
+            - superscript [ref=f28e56]: "*"
+          - textbox "Name *" [ref=f28e57]: Nazma
+        - generic [ref=f28e58]:
+          - generic [ref=f28e59]:
+            - text: Email
+            - superscript [ref=f28e60]: "*"
+          - textbox "Email *" [disabled] [ref=f28e61]: nazmashaik115@gmail.com
+        - generic [ref=f28e62]:
+          - generic [ref=f28e63]:
+            - text: Password
+            - superscript [ref=f28e64]: "*"
+          - textbox "Password *" [ref=f28e65]
+        - generic [ref=f28e66]:
+          - generic [ref=f28e67]: Date of Birth
+          - generic [ref=f28e68]:
+            - combobox [ref=f28e71]:
+              - option "Day" [selected]
+              - option "1"
+              - option "2"
+              - option "3"
+              - option "4"
+              - option "5"
+              - option "6"
+              - option "7"
+              - option "8"
+              - option "9"
+              - option "10"
+              - option "11"
+              - option "12"
+              - option "13"
+              - option "14"
+              - option "15"
+              - option "16"
+              - option "17"
+              - option "18"
+              - option "19"
+              - option "20"
+              - option "21"
+              - option "22"
+              - option "23"
+              - option "24"
+              - option "25"
+              - option "26"
+              - option "27"
+              - option "28"
+              - option "29"
+              - option "30"
+              - option "31"
+            - combobox [ref=f28e74]:
+              - option "Month" [selected]
+              - option "January"
+              - option "February"
+              - option "March"
+              - option "April"
+              - option "May"
+              - option "June"
+              - option "July"
+              - option "August"
+              - option "September"
+              - option "October"
+              - option "November"
+              - option "December"
+            - combobox [ref=f28e77]:
+              - option "Year" [selected]
+              - option "2021"
+              - option "2020"
+              - option "2019"
+              - option "2018"
+              - option "2017"
+              - option "2016"
+              - option "2015"
+              - option "2014"
+              - option "2013"
+              - option "2012"
+              - option "2011"
+              - option "2010"
+              - option "2009"
+              - option "2008"
+              - option "2007"
+              - option "2006"
+              - option "2005"
+              - option "2004"
+              - option "2003"
+              - option "2002"
+              - option "2001"
+              - option "2000"
+              - option "1999"
+              - option "1998"
+              - option "1997"
+              - option "1996"
+              - option "1995"
+              - option "1994"
+              - option "1993"
+              - option "1992"
+              - option "1991"
+              - option "1990"
+              - option "1989"
+              - option "1988"
+              - option "1987"
+              - option "1986"
+              - option "1985"
+              - option "1984"
+              - option "1983"
+              - option "1982"
+              - option "1981"
+              - option "1980"
+              - option "1979"
+              - option "1978"
+              - option "1977"
+              - option "1976"
+              - option "1975"
+              - option "1974"
+              - option "1973"
+              - option "1972"
+              - option "1971"
+              - option "1970"
+              - option "1969"
+              - option "1968"
+              - option "1967"
+              - option "1966"
+              - option "1965"
+              - option "1964"
+              - option "1963"
+              - option "1962"
+              - option "1961"
+              - option "1960"
+              - option "1959"
+              - option "1958"
+              - option "1957"
+              - option "1956"
+              - option "1955"
+              - option "1954"
+              - option "1953"
+              - option "1952"
+              - option "1951"
+              - option "1950"
+              - option "1949"
+              - option "1948"
+              - option "1947"
+              - option "1946"
+              - option "1945"
+              - option "1944"
+              - option "1943"
+              - option "1942"
+              - option "1941"
+              - option "1940"
+              - option "1939"
+              - option "1938"
+              - option "1937"
+              - option "1936"
+              - option "1935"
+              - option "1934"
+              - option "1933"
+              - option "1932"
+              - option "1931"
+              - option "1930"
+              - option "1929"
+              - option "1928"
+              - option "1927"
+              - option "1926"
+              - option "1925"
+              - option "1924"
+              - option "1923"
+              - option "1922"
+              - option "1921"
+              - option "1920"
+              - option "1919"
+              - option "1918"
+              - option "1917"
+              - option "1916"
+              - option "1915"
+              - option "1914"
+              - option "1913"
+              - option "1912"
+              - option "1911"
+              - option "1910"
+              - option "1909"
+              - option "1908"
+              - option "1907"
+              - option "1906"
+              - option "1905"
+              - option "1904"
+              - option "1903"
+              - option "1902"
+              - option "1901"
+              - option "1900"
+        - generic [ref=f28e78]:
+          - checkbox "Sign up for our newsletter!" [ref=f28e79]
+          - text: Sign up for our newsletter!
+        - generic [ref=f28e80]:
+          - checkbox "Receive special offers from our partners!" [ref=f28e81]
+          - text: Receive special offers from our partners!
+        - heading "Address Information" [level=2] [ref=f28e82]
+        - paragraph [ref=f28e83]:
+          - generic [ref=f28e84]:
+            - text: First name
+            - superscript [ref=f28e85]: "*"
+          - textbox "First name *" [ref=f28e86]
+        - paragraph [ref=f28e87]:
+          - generic [ref=f28e88]:
+            - text: Last name
+            - superscript [ref=f28e89]: "*"
+          - textbox "Last name *" [ref=f28e90]
+        - paragraph [ref=f28e91]:
+          - generic [ref=f28e92]: Company
+          - textbox "Company" [ref=f28e93]
+        - paragraph [ref=f28e94]:
+          - generic [ref=f28e95]:
+            - text: Address
+            - superscript [ref=f28e96]: "*"
+            - text: (Street address, P.O. Box, Company name, etc.)
+          - textbox "Address * (Street address, P.O. Box, Company name, etc.)" [ref=f28e97]
+        - paragraph [ref=f28e98]:
+          - generic [ref=f28e99]: Address 2
+          - textbox "Address 2" [ref=f28e100]
+        - paragraph [ref=f28e101]:
+          - generic [ref=f28e102]:
+            - text: Country
+            - superscript [ref=f28e103]: "*"
+          - combobox "Country *" [ref=f28e104]:
+            - option "India" [selected]
+            - option "United States"
+            - option "Canada"
+            - option "Australia"
+            - option "Israel"
+            - option "New Zealand"
+            - option "Singapore"
+        - paragraph [ref=f28e105]:
+          - generic [ref=f28e106]:
+            - text: State
+            - superscript [ref=f28e107]: "*"
+          - textbox "State *" [ref=f28e108]
+        - paragraph [ref=f28e109]:
+          - generic [ref=f28e110]:
+            - text: City
+            - superscript [ref=f28e111]: "*"
+          - textbox "City * Zipcode *" [ref=f28e112]
+        - paragraph [ref=f28e113]:
+          - generic [ref=f28e114]:
+            - text: Zipcode
+            - superscript [ref=f28e115]: "*"
+          - textbox [ref=f28e116]
+        - paragraph [ref=f28e117]:
+          - generic [ref=f28e118]:
+            - text: Mobile Number
+            - superscript [ref=f28e119]: "*"
+          - textbox "Mobile Number *" [ref=f28e120]
+        - button "Create Account" [ref=f28e121] [cursor=pointer]
+    - insertion [ref=f28e123]:
+      - iframe [ref=f28e125]:
+        - generic [ref=f36e3]:
+          - button [ref=f36e4]
+          - generic [ref=f36e6]:
+            - generic [ref=f36e8]:
+              - generic [ref=f36e12]:
+                - button "Play video" [ref=f36e16] [cursor=pointer]
+                - button "Unmute video" [ref=f36e22] [cursor=pointer]
+              - button "Replay" [ref=f36e29]
+            - button "Learn more" [ref=f36e43] [cursor=pointer]
+  - contentinfo [ref=f28e126]:
+    - generic [ref=f28e128]:
+      - generic [ref=f28e131]:
+        - heading "Subscription" [level=2] [ref=f28e132]
+        - generic [ref=f28e133]:
+          - textbox "Your email address" [ref=f28e134]
+          - button "" [ref=f28e135] [cursor=pointer]
+          - paragraph [ref=f28e137]: Get the most recent updates from our site and be updated your self...
+      - insertion [ref=f28e139]:
+        - generic [ref=f28e142]:
+          - heading "These are topics related to the article that might interest you" [level=2] [ref=f28e144]: Discover more
+          - link "Programming" [ref=f28e145] [cursor=pointer]
+          - link "Automation software" [ref=f28e150] [cursor=pointer]
+          - link "Automation testing courses" [ref=f28e155] [cursor=pointer]
+    - paragraph [ref=f28e163]: Copyright © 2021 All rights reserved
+  - text: 
